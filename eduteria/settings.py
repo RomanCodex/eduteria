@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'reports',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'eduteria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +119,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+#Static files Config
+STATIC_ROOT=BASE_DIR/'static/static_dtn'
+STATICFILES_DIRS=[
+    BASE_DIR/'static',
+]
+STATIC_URL='/media/'
+STATIC_ROOT=BASE_DIR/'static/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
