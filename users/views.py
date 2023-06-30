@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from .forms import StudentForm
 from reports.models import Report
-from .models import Student
+from .models import Student, Teacher
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    students=Student.objects.all()
+    teachers=Teacher.objects.all()
+    context={
+        "teachers":teachers,
+        "students":students,
+    }
+    return render(request, "index.html", context)
 
 def add_student(request):
     form=StudentForm()

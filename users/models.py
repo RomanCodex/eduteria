@@ -22,6 +22,7 @@ class Teacher(models.Model):
     name=models.CharField(max_length=256)
     teacher_id=models.CharField(max_length=11)
     gender=models.CharField(max_length=6)
+    phone_number=models.CharField(max_length=14, default="")
     date_of_birth=models.DateField()
     started_work=models.DateField()
     subject=models.CharField(max_length=256)
