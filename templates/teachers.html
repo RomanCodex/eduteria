@@ -1,40 +1,42 @@
 {% extends 'base.html' %}
 {% load icon %}
-{% block title %}Trainers {% endblock %}
+{% block title %}Teachers {% endblock %}
 {% block content %}
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Trainers</h1>
+        <h1 class="h2">Teachers</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
                 <button type="button" class="btn btn-sm btn-primary">
                     {% icon "plus" class="align-text-bottom" %}
-                    Add New Trainer
+                    Add New Teacher
                 </button>
             </div>
         </div>
         </div>
 
-        <h2>Trainers</h2>
+        <h2>Teachers</h2>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col">Date Registered</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Surname</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Subject</th>
                         <th scope="col">Phone No.</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Gender</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>random</td>
-                        <td>data</td>
-                        <td>placeholder</td>
-                        <td>text</td>
-                    </tr>
+                    {% for teacher in teachers %}
+                        <tr>
+                            <td>{{ teacher.name }}</td>
+                            <td>{{ teacher.teacher_id }}</td>
+                            <td>{{ teacher.subject }}</td>
+                            <td>{{ teacher.phone_number }}</td>
+                            <td>{{ teacher.gender }}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

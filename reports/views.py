@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import ReportForm
+from .models import Report
 
 # Create your views here.
 def create_report(request):
@@ -13,3 +14,10 @@ def create_report(request):
         'form':form
     }
     return render(request, 'create_report.html', context)
+
+def all_reports(request):
+    reports=Report.objects.all()
+    context={
+        "reports":reports,
+    }
+    return render(request, "reports.html", context)

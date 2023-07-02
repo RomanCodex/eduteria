@@ -18,6 +18,20 @@ def index(request):
     }
     return render(request, "index.html", context)
 
+def all_students(request):
+    students=Student.objects.all()
+    context={
+        "students":students,
+    }
+    return render(request, "students.html", context)
+
+def all_teachers(request):
+    teachers=Teacher.objects.all()
+    context={
+        "teachers":teachers,
+    }
+    return render(request, "teachers.html", context)
+
 def add_student(request):
     form=StudentForm()
     if request.method=="POST":
