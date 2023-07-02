@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <h1>Add Teacher</h1>
+        <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </main>
+{% endblock %}

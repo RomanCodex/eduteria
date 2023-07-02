@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import StudentForm
+from .forms import StudentForm, TeacherForm
 from reports.models import Report
 from finance.models import Payment
 from .models import Student, Teacher
@@ -24,6 +24,18 @@ def all_students(request):
         "students":students,
     }
     return render(request, "students.html", context)
+
+def add_teacher(request):
+    form=TeacherForm()
+    if request.method=="POST":
+        form=ReportForm(request.POST)
+        if form.is_valid():
+            form.save()
+        
+    context={
+        'form':form
+    }
+    return render(request, 'add_teacher.html', context)
 
 def all_teachers(request):
     teachers=Teacher.objects.all()
