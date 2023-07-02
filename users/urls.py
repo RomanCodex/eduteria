@@ -3,9 +3,9 @@ from .views import index, add_student, student_report, all_students, all_teacher
 
 urlpatterns=[
     path('', index),
-    path('students/', all_students, name="all-students"),
+    path('students/all/', all_students, name="all-students"),
     path('students/add/', add_student, name="add-student"),
     path('students/<int:id>/', student_report, name="student-report"),
-    path('teachers/', all_teachers, name="all-teachers"),
+    path('teachers/all/', all_teachers, name="all-teachers"),
     path('teachers/add/', add_teacher, name="add-teacher"),
 ]
