@@ -169,57 +169,33 @@
       <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
               {% icon "home" class="align-text-bottom" %}
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'all-teachers' %}">
               {% icon "user-check" class="align-text-bottom" %}
               Teachers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'all-students' %}">
               {% icon "user" class="align-text-bottom" %}
               Students
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              {% icon "users" class="align-text-bottom" %}
-              Classes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/reports/all/">
               {% icon "bar-chart-2" class="align-text-bottom" %}
               Reports
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/payments/all/">
               {% icon "dollar-sign" class="align-text-bottom" %}
               Payments
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               {% icon "pocket" class="align-text-bottom" %}
-              Wallets
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              {% icon "pie-chart" class="align-text-bottom" %}
-              Attendance
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              {% icon "message-circle" class="align-text-bottom" %}
-              Notifications
             </a>
           </li>
         </ul>
